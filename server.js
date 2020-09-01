@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 
 app.set('view engine', 'ejs');
@@ -29,9 +30,26 @@ const db = mongoose.connection;
 db.on('error', error => console.log(error));
 db.once('open', () => console.log("Connected to mongoose successfully."));
 
+// db.dropCollection("books", function (err, result) {
+
+//     if (err) {
+
+//         console.log("error delete collection");
+
+//     } else {
+
+//         console.log("delete collection success");
+
+//     }
+
+// });
+
 
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Project listenning on the port 3000");
+});
 

@@ -55,6 +55,7 @@ router.post('/', async (req, res) => {
     }catch{
 
         res.render('authors/new', {
+            
             author: author,
             errorMessage: "All the fields required !",
         
