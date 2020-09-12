@@ -66,6 +66,7 @@ router.post('/', async (req, res) => {
 
 });
 
+//show author
 router.get('/:id', async(req, res) => {
 
     try{
