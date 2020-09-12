@@ -7,6 +7,7 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 
 
@@ -22,13 +23,16 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
+
+app.use(methodOverride('_method'))
+
 // Database
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
-db.on('error', error => console.log(error));
 db.once('open', () => console.log("Connected to mongoose successfully."));
+db.on('error', error => console.log(error));
 
 // db.dropCollection("books", function (err, result) {
 

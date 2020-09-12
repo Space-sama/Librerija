@@ -30,12 +30,14 @@ router.get('/', async (req, res) => {
   if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
     query = query.gte('publishDate', req.query.publishedAfter)
   }
+
   try {
     const books = await query.exec()
     res.render('books/index', {
       books: books,
-      searchOptions: req.query
+      searchOptions: req.query,
     })
+    
   } catch {
     res.redirect('/')
   }
@@ -101,7 +103,7 @@ async function renderNewPage(res, book, hasError = false) {
   }
 
   function saveCover(book, encodedCover) {
-    if (encodedCover == null ) 
+    if (encodedCover == null) 
     return; // break
     const cover = JSON.parse(encodedCover);
 
