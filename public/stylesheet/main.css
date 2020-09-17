@@ -2,6 +2,8 @@
 @import 'shared/fonts.css';
 @import 'shared/header-var.css';
 @import 'shared/buttons-var.css';
+@import 'shared/form-var.css';
+
 
 :root {
 
@@ -35,3 +37,7 @@ body {
     font-size: 1.6rem;
     font-weight: 300;
 }
+
+/* .name-author {
+    margin-left: .20rem;
+} */

@@ -3,16 +3,25 @@
 
 <form action="/authors" method="GET">
 
-    <label for="name">Name</label><br />
-    <input type="text" name="name"  placeholder="Put the Name here for searching..." value="<%= searchOptions.name %>" />
-    <button class="btn btn-primary" type="submit">Search</button>
+    <div class="form-row">
+        <div class="form-item">
+            <label for="name">Name</label><br />
+            <input type="text" name="name"  placeholder="Put the Name here for searching..." value="<%= searchOptions.name %>" />
+        </div>
+    </div>
+    
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+
 
 </form><br />
 
 <% authors.forEach(author => { %>
 
-    <div><%= author.name %></div>
+    
     <div class="btn-row">
+        <div><%= author.name %></div>
         <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
         <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
 
@@ -20,6 +29,7 @@
         {url: `authors/${author.id}` })%>
    
     </div>
+    <br />
 <% }); %>
 
         
