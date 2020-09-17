@@ -1,16 +1,18 @@
 @font-face {
+    
     font-family: 'Aesthet';
     src: url('/fonts/Aesthet-Regular.woff2') format('woff2'),
-        url('/fonts/Aesthet-Regular.woff') format('woff');
+    url('/fonts/Aesthet-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
+
     font-family: 'Aesthet';
     src: url('/fonts/Aesthet-Regular2.woff2') format('woff2'),
-        url('/fonts/Aesthet-Regular2.woff') format('woff');
+    url('/fonts/Aesthet-Regular2.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

@@ -1,9 +1,9 @@
-<h2>New Book</h2>
+<h2 class="page-header">New Book</h2>
 <form action="/books" method="POST"> 
     <!-- /*enctype="multipart/form-data"*/  -->
 
     <%- include('_form-fields_books')%><br />
 
-    <a href="/books">Cancel</a>
-    <button type="submit">Create the book</button>
+    <a class="btn btn-primary" href="/books">Cancel</a>
+    <button class="btn btn-primary" type="submit">Create the book</button>
 </form>

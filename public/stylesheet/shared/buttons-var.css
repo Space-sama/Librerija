@@ -1,0 +1,63 @@
+:root {
+
+    --color-btn-primary-bg: hsl(var(--color-base-hue2), 100%, 83%);
+    --color-btn-primary-text: hsl(var(--color-base-hue2), 100%, 20%);
+    --color-btn-border: pink;
+
+
+
+    
+}
+
+.btn {
+    border: 1px solid var(--color-btn-border);
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 0.4rem;
+    font-family: 'Gotham Rounded';
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.btn-primary {
+    
+    color:  var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-bg);
+}
+
+.btn-primary:hover {
+    
+    background-color: white;
+    transition: 2s all;
+}
+
+.btn-danger {
+    
+    color:  whitesmoke;
+    background-color: rgb(216, 46, 75);
+}
+
+.btn-danger:hover {
+    
+    background-color:  rgb(204, 15, 15);
+    transition: 2s all;
+}
+
+
+.btn-row {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.btn-row > * {
+   margin-left: 1rem;
+    
+}
+
+.btn-row > *:first-child {
+    margin-left: 0;
+     
+ }
