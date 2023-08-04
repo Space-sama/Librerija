@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== 'production') {
+
     require('dotenv').config();
-}
+
 
 
 const express = require('express');
@@ -28,7 +28,7 @@ app.use(methodOverride('_method'))
 
 // Database
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Oussama:pI39VkdhShTrnYQE@cluster0.ljs3d.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.once('open', () => console.log("Connected to mongoose successfully."));
@@ -53,7 +53,7 @@ app.use('/', indexRouter);
 app.use('/authors', authorRouter);
 app.use('/books', bookRouter);
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("Project listenning on the port 3000");
 });
 
